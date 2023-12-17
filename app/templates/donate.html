@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+        {% block header %}        <h1>Donate in Manchester</h1>    {% endblock %}
+
+
+        {% block page %}
+
+        <style>
+        .product img {
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            object-fit: cover;
+        }
+        .container-btn {
+            height: 50px;
+            position: relative;
+            border: 0px solid green;
+        }
+
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            position: center;
+        }
+
+
+            button:hover {
+                background-color: #3a3833;
+            }
+        </style>
+
+    <div class="row mx-auto container-fluid">
+        <div class="product-container ">
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="{% static 'images/1.png' %}" alt="Product 1">
+                <p>Product 1</p>
+                <button onclick="addToCart(1)">Add to Cart</button>
+                <br>
+                <label for="quantity1">Quantity:</label>
+                <input type="number" id="quantity1" name="quantity1" value="1" min="1">
+            </div>
+
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src='{% static "images/2.png" %}' alt="Product 2">
+                <p>Product 2</p>
+                <button onclick="addToCart(2)">Add to Cart</button>
+                <br>
+                <label for="quantity2">Quantity:</label>
+                <input type="number" id="quantity2" name="quantity2" value="1" min="1">
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src='{% static "images/2.png" %}' alt="Product 2">
+                <p>Product 2</p>
+                <button onclick="addToCart(2)">Add to Cart</button>
+                <br>
+                <label for="quantity2">Quantity:</label>
+                <input type="number" id="quantity2" name="quantity2" value="1" min="1">
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src='{% static "images/2.png" %}' alt="Product 2">
+                <p>Product 2</p>
+                <button onclick="addToCart(2)">Add to Cart</button>
+                <br>
+                <label for="quantity2">Quantity:</label>
+                <input type="number" id="quantity2" name="quantity2" value="1" min="1">
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src='{% static "images/2.png" %}' alt="Product 2">
+                <p>Product 2</p>
+                <button onclick="addToCart(2)">Add to Cart</button>
+                <br>
+                <label for="quantity2">Quantity:</label>
+                <input type="number" id="quantity2" name="quantity2" value="1" min="1">
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src='{% static "images/2.png" %}' alt="Product 2">
+                <p>Product 2</p>
+                <button onclick="addToCart(2)">Add to Cart</button>
+                <br>
+                <label for="quantity2">Quantity:</label>
+                <input type="number" id="quantity2" name="quantity2" value="1" min="1">
+            </div>
+
+            <!-- Add more products as needed -->
+        </div>
+
+    </div>
+    <div class="container-btn">
+        <div class="center">
+            <button type="submit">
+                <a href="{% url 'donate' %}">Donate</a>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function addToCart(productId) {
+            // Placeholder function for adding products to the cart
+            var quantity = document.getElementById('quantity' + productId).value;
+            alert('Added ' + quantity + ' of Product ' + productId + ' to the cart!');
+        }
+    </script>
+
+
+    <footer>
+        <p>&copy; 2023 Collector and Donner Manchester. All rights reserved.</p>
+    </footer>
+
+{%  endblock %}
